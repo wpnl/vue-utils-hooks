@@ -1,28 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-Vue.use(VueRouter)
-
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  { path: '/', name: 'Home', component: Home },
+  { path: '/userSize', name: 'UserSize', component: () => import('../views/hooksView/UserSizeView.vue') },
+  { path: '/userHover', name: 'UserHoverView', component: () => import('../views/hooksView/UserHoverView.vue') },
+  { path: '/useDocumentVisibility', name: 'useDocumentVisibilityView', component: () => import('../views/hooksView/UseDocumentVisibilityView.vue') },
+  { path: '/useFullscreen', name: 'useFullscreenView', component: () => import('../views/hooksView/UseFullscreenView.vue') },
+  { path: '/useInViewport', name: 'UseInViewportView', component: () => import('../views/hooksView/UseInViewportView.vue') }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 

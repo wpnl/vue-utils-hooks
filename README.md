@@ -1,24 +1,17 @@
 # vue-utiles-hooks
 
-## Project setup
-```
-npm install
-```
+**一个用 vue composition API 编写的常用 hook**
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+灵感来自 umi-hooks
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# List
 
-### Lints and fixes files
-```
-npm run lint
-```
+- userSize 监听元素变化
+- userHover 跟踪 dom 元素是否有鼠标悬停
+- useDocumentVisibility 可以获取页面可见状态的 Hook
+- useFullscreen 一个用于处理 dom 全屏的 Hook
+- useInViewport 一个用于判断dom元素是否在可视范围之内的 Hook
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# npm / yarn serve 运行
+
+
