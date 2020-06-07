@@ -5,7 +5,7 @@ import screenfull from 'screenfull'
  * 一个用于处理 dom 全屏的 Hook
  * @param {refName} ref名称
  */
-export default function useFullscreen(refName) {
+export default function useFullscreen (refName) {
   const state = ref(false)
   const setFull = () => { state.value = true }
   const exitFull = () => { state.value = false }
