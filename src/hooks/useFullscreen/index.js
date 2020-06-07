@@ -2,10 +2,10 @@ import { ref, onMounted, getCurrentInstance, watchEffect } from 'vue'
 import screenfull from 'screenfull'
 
 /**
- * 跟踪 dom 元素是否有鼠标悬停
+ * 一个用于处理 dom 全屏的 Hook
  * @param {refName} ref名称
  */
-export default function useFullscreen (refName) {
+export default function useFullscreen(refName) {
   const state = ref(false)
   const setFull = () => { state.value = true }
   const exitFull = () => { state.value = false }
@@ -53,7 +53,7 @@ export default function useFullscreen (refName) {
           try {
             screenfull.off('change', onChange)
             screenfull.exit()
-          } catch (error) {}
+          } catch (error) { }
         }
       })
     })
